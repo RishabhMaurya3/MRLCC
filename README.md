@@ -1,8 +1,8 @@
-# MRLCC: Adaptive Cloud Task Scheduling using Meta Reinforcement Learning
+# MRLCC: Cloud Task Scheduling using Meta Reinforcement Learning
 
 ## Project Overview
 
-This project implements MRLCC (Meta Reinforcement Learning for Cloud Computing), an adaptive cloud task scheduling framework designed to optimize task allocation and resource utilization in cloud environments.
+This project implements MRLCC (Meta Reinforcement Learning for Cloud Computing), cloud task scheduling framework designed to optimize task allocation and resource utilization in cloud environments.
 
 The model uses:
 
