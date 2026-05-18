@@ -1,54 +1,170 @@
-# MRLCC
+# MRLCC: Adaptive Cloud Task Scheduling using Meta Reinforcement Learning
 
-Welcome to the MRLCC repository!
+## Project Overview
 
-## Description
+This project implements MRLCC (Meta Reinforcement Learning for Cloud Computing), an adaptive cloud task scheduling framework designed to optimize task allocation and resource utilization in cloud environments.
 
-This project contains code and resources related to MRLCC.
+The model uses:
 
-## Getting Started
+- Reinforcement Learning (RL)
+- Meta Reinforcement Learning
+- Markov Decision Process (MDP)
+- Cloud workload traces (Azure & Tencent datasets)
 
-### Prerequisites
+The objective is to improve:
 
-- List any prerequisites or dependencies needed to run this project
+- Task scheduling efficiency
+- Load balancing
+- Resource utilization
+- Execution time
+- Scheduling performance in dynamic cloud environments
 
-### Installation
+## Project Folder Structure
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/RishabhMaurya3/MRLCC.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd MRLCC
-   ```
-
-3. Install dependencies (if applicable):
-   ```bash
-   # Add installation instructions here
-   ```
-
-## Usage
-
-Provide instructions on how to use this project.
-
-```bash
-# Example usage command
+```
+project/
+│
+├── data/                  # Input datasets
+│   ├── azure_raw.csv
+│   └── batch_task.csv
+│
+├── output/                # Generated outputs/results
+│
+├── dataset.py             # Dataset loading and preprocessing
+├── environment.py         # Cloud environment simulation
+├── evaluation.py          # Evaluation metrics and testing
+├── heuristics.py          # Baseline heuristic scheduling methods
+├── main.py                # Main execution file
+├── model.py               # RL/MRLCC model implementation
+├── scenarios.py           # Scenario generation/configuration
+│
+└── README.md
 ```
 
-## Contributing
+## System Requirements
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
+### Software Requirements
 
-## License
+- Python 3.9 or above
+- pip package manager
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Recommended Hardware
 
-## Contact
+- Minimum 8 GB RAM
+- Multi-core CPU
+- GPU optional (recommended for faster training)
 
-For questions or inquiries, please contact [your-email@example.com].
+## Installation Guide
 
----
+### Step 1: Clone or Download Project
 
-**Last Updated:** 2026-05-18
+```bash
+git clone <repository-url>
+```
+
+OR simply extract the project ZIP.
+
+### Step 2: Open Project Folder
+
+Open terminal or command prompt inside the project directory.
+
+Example:
+
+```bash
+cd project-folder
+```
+
+### Step 3: Create Virtual Environment (IMPORTANT)
+
+#### For Windows
+
+```bash
+python -m venv venv
+```
+
+Activate environment:
+
+```bash
+venv\Scripts\activate
+```
+
+#### For Linux / macOS
+
+```bash
+python3 -m venv venv
+```
+
+Activate environment:
+
+```bash
+source venv/bin/activate
+```
+
+### Step 4: Install Required Libraries
+
+Install dependencies:
+
+```bash
+pip install numpy pandas matplotlib torch gym tqdm scikit-learn tensorflow
+```
+
+## Dataset Setup
+
+Place datasets inside the `data/` folder:
+
+```
+data/
+├── azure_raw.csv
+└── batch_task.csv
+```
+
+Datasets used:
+
+- Azure workload trace
+- Tencent batch task dataset
+
+## Running the Project
+
+### Normal Execution
+
+Run the complete MRLCC training:
+
+```bash
+python main.py --azure data\azure_raw.csv --tencent data\batch_task.csv
+```
+
+### Fast Execution Mode (Recommended for Testing)
+
+If you want faster execution with smaller iterations and reduced training time:
+
+```bash
+python main.py --fast --azure data\azure_raw.csv --tencent data\batch_task.csv
+```
+
+### Fast Mode Benefits
+
+- Smaller training iterations
+- Faster execution
+- Quick testing/debugging
+- Suitable for low-end systems
+
+Use `--fast` if:
+
+- You want quick results
+- You are testing code changes
+- Your system has limited resources
+
+## Output Results
+
+Generated outputs and evaluation results will be stored inside:
+
+```
+output/
+```
+
+Outputs may include:
+
+- Training logs
+- Scheduling metrics
+- Reward graphs
+- Evaluation reports
