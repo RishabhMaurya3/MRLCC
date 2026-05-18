@@ -162,9 +162,8 @@ Generated outputs and evaluation results will be stored inside:
 output/
 ```
 
-Outputs may include:
+Outputs include:
 
-- Training logs
-- Scheduling metrics
-- Reward graphs
-- Evaluation reports
+- **Figure 5**: Comparison of scheduling performance across 3 scenarios
+- **Figure 6**: Performance analysis with varying CPU configurations (CPU=12 and CPU=15 cases)
+- **Performance Metrics Table**: Comprehensive comparison of algorithms
